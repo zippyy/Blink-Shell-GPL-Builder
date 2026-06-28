@@ -1,0 +1,22 @@
+// iCloud-capable configuration for zippyy's Blink build.
+// Copy this to blink-src/developer_setup.xcconfig after setup, or use
+// ./configure-icloud-signing.sh after ./build-blink-shell-gpl-fixed.sh --setup-only.
+//
+// The Apple Developer portal must contain matching resources:
+//   App ID:              com.zippyy.blink
+//   iCloud container:    iCloud.com.zippyy.blink
+//   App Group:           group.com.zippyy.blink
+
+TEAM_ID = ACBMGSSX43
+BUNDLE_ID = com.zippyy.blink
+GROUP_ID = com.zippyy.blink
+CLOUD_ID = com.zippyy.blink
+KEYCHAIN_ID1 = com.zippyy.blink
+
+SWIFT_ACTIVE_COMPILATION_CONDITIONS[config=Debug]   = BLINK_PUBLISHING_OPTION_DEVELOPER
+SWIFT_ACTIVE_COMPILATION_CONDITIONS[config=Release] = BLINK_PUBLISHING_OPTION_TESTFLIGHT
+
+BLINK_MIGRATION_SCHEME = blinkv15
+WHATS_NEW_URL = http:/$()/localhost/whats-new
+CONVERSION_OPPORTUNITY_URL = http:/$()/localhost/conversionOpportunity
+BLINK_APP_FONT = JetBrains Mono
